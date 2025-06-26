@@ -46,7 +46,7 @@ min_temp = s:option(Value, "min_temp", translate("min_temp"), translate("Tempera
 
 min_speed = s:option(Value, "min_speed", translate("min_speed"), translate("Fan speed at minimum fan state"))
     min_speed.datatype = "uinteger"
-    min_speed.default = "0"
+    min_speed.default = "80"
     min_speed.rmempty = "false"
     min_speed.optional = "false"
 
@@ -58,7 +58,7 @@ mid_temp = s:option(Value, "mid_temp", translate("mid_temp"), translate("Tempera
 
 mid_speed = s:option(Value, "mid_speed", translate("mid_speed"), translate("Fan speed at medium fan state"))
     mid_speed.datatype = "uinteger"
-    mid_speed.default = "2500"
+    mid_speed.default = "150"
     mid_speed.rmempty = "false"
     mid_speed.optional = "false"
 
@@ -70,7 +70,7 @@ max_temp = s:option(Value, "max_temp", translate("max_temp"), translate("Tempera
 
 max_speed = s:option(Value, "max_speed", translate("max_speed"), translate("Fan speed at minimum fan state - can be set to 0"))
     max_speed.datatype = "uinteger"
-    max_speed.default="4000"
+    max_speed.default="250"
     max_speed.rmempty="false"
     max_speed.optional="false"
 

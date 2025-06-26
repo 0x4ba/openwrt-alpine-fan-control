@@ -14,7 +14,7 @@ SPEED_MID="$4"
 SPEED_HIGH="$6"
 
 # hwmon paths, hardcoded for alpine platform, adjust as needed
-FILE_SPEED='/sys/class/hwmon/hwmon0/fan1_target'
+FILE_SPEED='/sys/bus/platform/drivers/pwm-fan/pwm-fan/hwmon/hwmon1/pwm1'
 FILE_TEMP='/sys/class/thermal/thermal_zone0/temp'
 { [ -f "$FILE_SPEED" ] && [ -f "$FILE_TEMP" ]; } || { logger "alpine-fan-controller: invalid hwmon files" ; exit 1; }
 
@@ -89,7 +89,7 @@ interpolate_speed() {
 
 reset_on_exit() {
   echo "exiting, going to max fan speed for safety..." >&2
-  echo 4000 > "$FILE_SPEED"
+  echo 80 > "$FILE_SPEED"
   exit 0
 }
 
